@@ -11,8 +11,10 @@
   </div>
 </div>
 
-<%= link_to "Nouveau potin", new_gossip_path, class: "btn btn-secondary bg-info'" %>
-
+<%#= link_to "Nouveau potin", new_gossip_path, class: "btn btn-secondary bg-info'" %>
+<%= link_to "Besoin de te libérer ? Viens, c'est par ici ...", new_gossip_path, class: "btn btn-outline-secondary btn-lg btn-block" %>
+<br/>
+<br/>
 <div class="card-columns border-info container ">
   <% @gossips.each do | gossip | %>
     <div class="card border-info text-white bg-info mb-3">
@@ -20,8 +22,8 @@
         <%= link_to 'Auteur:', user_path(:id => gossip.user.id), style: "text-decoration: none" %>
         <%= gossip.user.first_name %> <%= gossip.user.last_name %>
         <% if @comment_count[gossip.id] != nil %>
-          <button type="button" class="btn btn-primary">
-          Post <span class="badge badge-light"><%= @comment_count[gossip.id]%> </span>
+          <button type="button" class="btn btn-light btn-sm">
+          Post <span class="badge badge-danger"><%= @comment_count[gossip.id]%> </span>
           </button>
           <% end %>
     </div>

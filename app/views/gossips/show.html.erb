@@ -8,7 +8,7 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Voici le potin n° <%= @gossip.id%></li>
+    <li class="breadcrumb-item active" aria-current="page"><strong>Voici le potin n° <%= @gossip.id%></strong></li>
   </ol>
 </nav>
 
@@ -21,7 +21,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item active" aria-current="page">
-    Auteur : <%= @gossip.user.first_name %> <%= link_to @gossip.user.last_name, user_path(:id => @gossip.user.id), style: "text-decoration: none" %><br/>
+    <strong>Auteur : <%= @gossip.user.first_name %> <%= link_to @gossip.user.last_name, user_path(:id => @gossip.user.id), style: "text-decoration: none" %></strong><br/>
     Titre : <%= @gossip.title %><br/>
     Contenu : <%= @gossip.content %><br/></li>
   </ol>
@@ -52,8 +52,8 @@
       <h4 class="desc-title">Commentaire de <%= comm.user_id %> </h4>
       <p class="desc"><%= comm.content %></p>
       <div class="show-edit">
-          <%= link_to 'Editer', edit_comment_path(comm.id), class:'article-btn', confirm: 'Êtes-vous sûr ?' %>
-          <%= link_to 'Supprimer', comment_path(comm.id), method: 'delete', class:'article-btn btn-grey'%>
+          <%= link_to 'Modifier', edit_comment_path(comm.id), class:'btn btn-secondary', confirm: 'Êtes-vous sûr ?' %>
+          <%= link_to 'Supprimer', comment_path(comm.id), method: 'delete', class:'btn btn-outline-danger'%>
       </div>
     </article>
   <% end %> 
