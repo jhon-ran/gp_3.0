@@ -37,3 +37,4 @@ class CitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+ 

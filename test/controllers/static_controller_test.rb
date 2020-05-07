@@ -12,3 +12,4 @@ class StaticControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+ 

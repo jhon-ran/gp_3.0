@@ -37,3 +37,4 @@ class GossipsControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+ 

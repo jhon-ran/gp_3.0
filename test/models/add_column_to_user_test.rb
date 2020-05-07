@@ -5,3 +5,4 @@ class AddColumnToUserTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+

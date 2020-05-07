@@ -7,3 +7,4 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+ 

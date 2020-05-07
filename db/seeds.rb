@@ -17,7 +17,7 @@ Comment.destroy_all
   )
 end
 
-
+ 
 # seed tag
 10.times do
   Tag.create!(

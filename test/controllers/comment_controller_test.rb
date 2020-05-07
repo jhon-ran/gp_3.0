@@ -37,3 +37,4 @@ class CommentControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+ 
