@@ -1,18 +1,17 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Derniers ragôts !</h1>
+    <h1 class="display-4"></h1>
     <% if logged_in? %>
-      <h1 class="display-6">Bienvenue <%= current_user.email %> ! </h1>
+      <h1 class="display-6">Welcome back<%= current_user.email %> ! </h1>
     <% else %>
-      <h1 class="display-6">Bienvenue ! </h1>
+      <h1 class="display-6">Welcome to the Gossip Project </h1>
     <% end %>  
-    <p class="lead">Regardez ce qui se dit sur vous...</p>
   </div>
 </div>
 
 <%#= link_to "Nouveau potin", new_gossip_path, class: "btn btn-secondary bg-info'" %>
-<%= link_to "Besoin de te libérer ? Viens, c'est par ici ...", new_gossip_path, class: "btn btn-outline-secondary btn-lg btn-block" %>
+<%= link_to "New gossip", new_gossip_path, class: "btn btn-outline-secondary btn-lg btn-block" %>
 <br/>
 <br/>
 <div class="card-columns border-info container ">
@@ -28,9 +27,9 @@
           <% end %>
     </div>
     <div class="card-body">
-        Titre du ragôt : 
+        Title: 
         <h5 class="card-title"><%= gossip.title %></h5>
-        <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-info' %>
+        <%= link_to 'See more', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-info' %>
     </div>
     </div>
   <% end %>

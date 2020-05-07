@@ -1,22 +1,21 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Login</h1>
-    <p class="lead">Ouverture de session</p>
+    <p class="lead">Login</p>
   </div>
 </div>
 
  <div class="form-group">
 <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-  <%= label_tag 'Login (email) : ' %>
+  <%= label_tag 'Login: ' %>
   <%= text_field_tag 'email', :email, class: "form-control" %>
   <br /> <br />
 
-  <%= label_tag 'Mot de passe : ' %>
+  <%= label_tag 'Password: ' %>
   <%= text_field_tag 'password', :password, class: "form-control" %>
   <br /> <br />
 
-  <%= submit_tag "Valider", class: "btn btn-secondary " %>
+  <%= submit_tag "Send", class: "btn btn-secondary " %>
 
 <% end %>
 </div>

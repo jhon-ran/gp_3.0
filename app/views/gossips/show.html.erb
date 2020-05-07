@@ -44,16 +44,16 @@
   <%= text_area_tag 'content', nil %>
   <br /> <br />
 
-  <%= submit_tag "Poster", class: "btn btn-secondary " %>
+  <%= submit_tag "Send", class: "btn btn-secondary " %>
 
 
   <% @comment.each do |comm| %>
     <article> 
-      <h4 class="desc-title">Commentaire de <%= comm.user_id %> </h4>
+      <h4 class="desc-title">Commenter <%= comm.user_id %> </h4>
       <p class="desc"><%= comm.content %></p>
       <div class="show-edit">
-          <%= link_to 'Modifier', edit_comment_path(comm.id), class:'btn btn-secondary', confirm: 'Êtes-vous sûr ?' %>
-          <%= link_to 'Supprimer', comment_path(comm.id), method: 'delete', class:'btn btn-outline-danger'%>
+          <%= link_to 'Update', edit_comment_path(comm.id), class:'btn btn-secondary', confirm: 'Sure?' %>
+          <%= link_to 'Delete', comment_path(comm.id), method: 'delete', class:'btn btn-outline-danger'%>
       </div>
     </article>
   <% end %> 

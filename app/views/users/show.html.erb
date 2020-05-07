@@ -11,9 +11,9 @@
     <h2> <%= @user.first_name %> <%= @user.last_name %></h2>
   </div>
   <div class="card-body">
-    <p class="card-text"><strong>Âge :</strong> <%= @user.age %><br/>
-    <strong>Ville :</strong> <a href="<%= city_path %>"> <%= @user.city.name %> </a> <br/>
-    <strong>Ma vie, mon oeuvre :</strong> <%= @user.description %></p>
+    <p class="card-text"><strong>age:</strong> <%= @user.age %><br/>
+    <strong>City:</strong> <a href="<%= city_path %>"> <%= @user.city.name %> </a> <br/>
+    <strong>Description:</strong> <%= @user.description %></p>
   </div>
   <div class="card-footer text-muted">
     <h4> <%= @user.email %> </h4>

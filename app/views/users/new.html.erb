@@ -1,30 +1,30 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">S'inscrire sur The Gossip Project ! </h1>
-    <p class="lead">Donne un email pour te joindre et un mot de passe (min 6 car.)</p>
+
+    <p class="lead">Signup</p>
   </div>
 </div>
 
 <div class="form-group">
 <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-  <%= label_tag '* Ton futur Login (email) : ' %>
+  <%= label_tag '* Email: ' %>
   <%= text_field_tag 'email', nil, class: "form-control" %>
   <br /> <br />
 
-  <%= label_tag ' * Mot de passe : ' %>
+  <%= label_tag ' * Password: ' %>
   <%= text_field_tag 'password', nil, class: "form-control" %>
   <br /> <br />
 
-  <%= label_tag '* Prénom : ' %>
+  <%= label_tag '* First name: ' %>
   <%= text_field_tag 'first_name', nil, class: "form-control" %>
   <br /> <br />
 
-  <%= label_tag '* Nom : ' %>
+  <%= label_tag '* Last name: ' %>
   <%= text_field_tag 'last_name', nil, class: "form-control" %>
   <br /> <br />
   
-  <%= label_tag 'Description : ' %>
+  <%= label_tag 'Description: ' %>
   <%= text_area_tag 'description', nil, class: "form-control" %>
   <br /> <br />
   
@@ -38,7 +38,7 @@
   <% end %>
   </select>
 
-  <%= submit_tag "Valider", class: "btn btn-secondary " %>
+  <%= submit_tag "Send", class: "btn btn-secondary " %>
 
 <% end %>
 </div>
