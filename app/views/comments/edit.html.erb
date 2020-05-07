@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Update a comment </h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<%= form_tag url_for(action: 'update'), method: "put" do %>
+
+  <%= label_tag 'Text: ' %>
+  <%= text_area_tag 'content', @comment.content %>
+  <br /> <br />
+
+  <%= submit_tag "Update", class: "btn btn-secondary " %>
+
+<% end %>

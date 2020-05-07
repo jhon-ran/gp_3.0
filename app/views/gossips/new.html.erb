@@ -1,0 +1,36 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">New gossip</p>
+  </div>
+</div>
+
+ <% if @gossip.errors.any? %>
+  <div style="padding: 5px;">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"></h4>
+      <p>Impossible to save your gossip</p>
+      <hr>
+      <ul>
+        <% @gossip.errors.full_messages.each do |message| %>
+          <li><p class="mb-0"><%= message %></p></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+ 
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+  <%= label_tag 'Title: ' %>
+  <%= text_field_tag 'title', @gossip.title %>
+  <br /> <br />
+
+  <%= label_tag 'Text: ' %>
+  <%= text_area_tag 'content', @gossip.content %>
+  <br /> <br />
+
+  <%= submit_tag "Send", class: "btn btn-secondary " %>
+
+<% end %>
+

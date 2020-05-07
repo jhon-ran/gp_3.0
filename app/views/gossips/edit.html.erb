@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Edit</p>
+  </div>
+</div>
+
+<%= form_tag url_for(action: 'update'), method: "put" do %>
+
+  <%= label_tag 'Title: ' %>
+  <%= text_field_tag 'title', @gossip.title %>
+  <br /> <br />
+
+  <%= label_tag 'Text: ' %>
+  <%= text_area_tag 'content', @gossip.content %>
+  <br /> <br />
+
+  <%= submit_tag "Send", class: "btn btn-secondary " %>
+
+<% end %>

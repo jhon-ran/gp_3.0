@@ -1,0 +1,41 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"></h1>
+    <% if logged_in? %>
+      <h1 class="display-6">Welcome back<%= current_user.email %> ! </h1>
+    <% else %>
+      <h1 class="display-6">Welcome to the Gossip Project </h1>
+    <% end %>  
+  </div>
+</div>
+
+<%#= link_to "Nouveau potin", new_gossip_path, class: "btn btn-secondary bg-info'" %>
+<%= link_to "New gossip", new_gossip_path, class: "btn btn-primary btn-lg" %>
+
+
+<!--btn btn-outline-secondary btn-sm btn-block-->
+<br/>
+<br/>
+<div class="card-columns border-info container ">
+  <% @gossips.each do | gossip | %>
+    <div class="card border-info text-white bg-info mb-3">
+    <div class="card-header bg-light text-warning">
+        <%= link_to 'User:', user_path(:id => gossip.user.id), style: "text-decoration: none" %>
+        <%= gossip.user.first_name %> <%= gossip.user.last_name %>
+        <% if @comment_count[gossip.id] != nil %>
+          <button type="button" class="btn btn-light btn-sm">
+          Post <span class="badge badge-danger"><%= @comment_count[gossip.id]%> </span>
+          </button>
+          <% end %>
+    </div>
+    <div class="card-body">
+        Title: 
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <%= link_to 'See more', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-info' %>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+
